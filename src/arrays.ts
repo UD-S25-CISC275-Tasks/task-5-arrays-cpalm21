@@ -7,14 +7,14 @@
 export function bookEndList(numbers: number[]): number[] {
     if (numbers.length == 0) {
         return [];
-    }
-    if (numbers.length == 1) {
+    } else if (numbers.length == 1) {
         return [...numbers, ...numbers];
+    } else {
+        return [
+            ...numbers.slice(0, 1),
+            ...numbers.slice(numbers.length - 1, numbers.length),
+        ];
     }
-    return [
-        ...numbers.slice(0, 1),
-        ...numbers.slice(numbers.length - 1, numbers.length),
-    ];
 }
 
 /**
